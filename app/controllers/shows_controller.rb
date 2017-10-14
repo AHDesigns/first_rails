@@ -39,6 +39,13 @@ class ShowsController < ApplicationController
     end
   end
 
+  def destroy
+    @show = Show.find(params[:id])
+    @show.destroy
+
+    redirect_to shows_manage_path
+  end
+
   private
 
   def show_params
