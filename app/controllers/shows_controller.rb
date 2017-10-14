@@ -17,8 +17,26 @@ class ShowsController < ApplicationController
     @shows = Show.all
   end
 
+  def manage
+    @shows = Show.all
+  end
+
   def show
     @show = Show.find(params[:id])
+  end
+
+  def edit
+    @show = Show.find(params[:id])
+  end
+
+  def update
+    @show = Show.find(params[:id])
+
+    if @show.update(show_params)
+      redirect_to @show
+    else
+      render 'edit'
+    end
   end
 
   private

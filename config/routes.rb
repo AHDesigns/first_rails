@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'shows/index'
+  get 'shows/manage'
 
   resources :shows
 

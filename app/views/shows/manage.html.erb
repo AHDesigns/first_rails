@@ -1,0 +1,15 @@
+<h1>Manage Shows</h1>
+
+<p>
+<%= link_to 'home', shows_index_path %>
+</p>
+
+<p>
+<%= link_to 'add new', new_show_path %>
+</p>
+
+<table>
+<% @shows.each do |show| %>
+  <tr><%= render partial: 'show_row', locals: { show: show } %></tr>
+<% end %>
+</table>
