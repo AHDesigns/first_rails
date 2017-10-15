@@ -1,3 +1,13 @@
-<%= render partial: 'tile', locals: { show: @show } %>
-<%= link_to 'Home', shows_index_path %>
-<%= link_to 'Manage', shows_manage_path %>
+<div class="o-layout">
+  <%= render partial: 'masthead', locals: {
+    title: @show[:title],
+    links: [
+      { name: 'Home', path: 'index' },
+      { name: 'Manage', path: 'manage' },
+    ]
+  } %>
+
+  <div class="o-layout__item u-width-1">
+    <%= render partial: 'tile', locals: { show: @show } %>
+  </div>
+</div>

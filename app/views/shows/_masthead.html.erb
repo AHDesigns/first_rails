@@ -1,0 +1,20 @@
+<div class="o-layout__item u-width-1 main-header">
+  <ul class="o-list-inline main-header-text">
+    <li class="o-list-inline__item">
+      <%= image_tag('/assets/Sky_logo.png', width: '100', alt: 'Sky', class: 'logo') %>
+    </li>
+    <li class="o-list-inline__item c-heading-charlie">
+      <%= title %>
+    </li>
+    <% if defined? links %>
+      <li class="o-list-inline__item c-heading-delta">
+        |
+      </li>
+      <% links.each do |link| %>
+        <li class="o-list-inline__item c-heading-echo">
+          <%= link_to link[:name], link[:path] %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

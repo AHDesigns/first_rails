@@ -1,15 +1,13 @@
 <div class="o-layout">
-  <div class="o-layout__item u-width-1">
-    <h1>Shows</h1>
-  </div>
+  <%= render partial: 'masthead', locals: { title: 'Shows' } %>
 
   <div class="o-layout__item u-width-1">
     <% @shows.each do |show| %>
       <%= render partial: 'tile', locals: { show: show } %>
     <% end %>
   </div>
+</div>
 
-  <div class="o-layout__item u-width-1">
-    <%= link_to 'manage', shows_manage_path %>
-  </div>
+<div class="footer">
+  <%= link_to 'Manage', shows_manage_path %>
 </div>

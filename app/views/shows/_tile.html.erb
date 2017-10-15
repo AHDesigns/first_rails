@@ -1,2 +1,9 @@
-<%= show['title']  %>
-<%= image_tag("/assets/#{show['url']}", :alt => "image") %>
+<div class="o-layout__item u-width-1/4">
+  <article class="c-tile">
+    <div class="c-tile__content">
+      <%= image_tag("/assets/#{show['url']}", :alt => show['title']) %>
+    </div>
+    <div class="c-tile__content">
+    </div>
+  </article>
+</div>

@@ -1,15 +1,23 @@
-<h1>Manage Shows</h1>
+<div class="o-layout">
+  <%= render partial: 'masthead', locals: {
+    title: 'Manage',
+    links: [
+      { name: 'Home', path: 'index' },
+      { name: 'New', path: 'new' },
+    ]
+  } %>
 
-<p>
-<%= link_to 'home', shows_index_path %>
-</p>
-
-<p>
-<%= link_to 'add new', new_show_path %>
-</p>
-
-<table>
-<% @shows.each do |show| %>
-  <tr><%= render partial: 'show_row', locals: { show: show } %></tr>
-<% end %>
-</table>
+  <div class="o-layout__item u-width-1">
+  <table class="c-table-simple">
+    <tr>
+      <th class="c-table-simple__cell">Img</th>
+      <th class="c-table-simple__cell">Title</th>
+      <th class="c-table-simple__cell">Link</th>
+      <th class="c-table-simple__cell">Controls</th>
+    </tr>
+    <% @shows.each do |show| %>
+      <tr class="c-table-simple__row"><%= render partial: 'show_row', locals: { show: show } %></tr>
+    <% end %>
+  </table>
+  </div>
+</div>

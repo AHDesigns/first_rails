@@ -1,3 +1,30 @@
 // Place all the styles related to the Shows controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-header {
+  background-color: #fff;
+  box-shadow: 0px 3px 8px 0px rgba(100,100,100,0.75);
+  margin-bottom: 25px;
+}
+
+.main-header-text {
+  margin: 20px auto 10px;
+  li {
+    padding-left: 10px;
+  }
+}
+
+.logo {
+  margin-top: -10px;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: inset 0px 3px 8px 0px rgba(100,100,100,0.75);
+  text-align: center;
+}
