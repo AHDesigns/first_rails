@@ -26,6 +26,11 @@
           <%= form.text_area :url, class: 'c-form-input' %>
         </li>
 
+        <li class="c-form-list__item">
+          <%= form.label :rating, class: 'c-form-label' %><br>
+          <%= form.number_field :rating, { in: 1...6, class: 'c-form-input' }%>
+        </li>
+
         <%= form.submit class: 'c-btn c-btn--primary' %>
       <% end %>
 

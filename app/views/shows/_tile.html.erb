@@ -4,12 +4,13 @@
       <%= image_tag("/assets/#{show['url']}", :alt => show['title']) %>
     </div>
     <div class="c-tile__content rating">
-      <% rating = 3 %>
-      <% (1..rating).each do |i| %>
-        <%= image_tag("/assets/filledStar.png", :alt => '*', :width => '18px') %>
-      <% end %>
-      <% (1..(5 - rating)).each do |i| %>
-        <%= image_tag("/assets/emptyStar.png", :alt => '-', :width => '18px') %>
+      <% if show['rating'].nil? || show['rating'] < 1  %>
+        <p>be the first to rate!</p>
+      <% else %>
+        <% (1..5).each do |i| %>
+          <% img = i <= show['rating'] ? "/assets/filledStar.png" : "/assets/emptyStar.png" %>
+          <%= image_tag(img, :alt => '*', :width => '18px', :id => "#{show['title']}-rating-#{i}") %>
+        <% end %>
       <% end %>
     </div>
   </article>
