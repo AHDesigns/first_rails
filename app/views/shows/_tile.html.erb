@@ -1,4 +1,4 @@
-<div class="o-layout__item u-width-1/4">
+<div class="o-layout__item u-width-1/3">
   <article class="c-tile">
     <div class="c-tile__content">
       <%= image_tag("/assets/#{show['url']}", :alt => show['title']) %>
@@ -7,9 +7,15 @@
       <% if show['rating'].nil? || show['rating'] < 1  %>
         <p>be the first to rate!</p>
       <% else %>
-        <% (1..5).each do |i| %>
-          <% img = i <= show['rating'] ? "/assets/filledStar.png" : "/assets/emptyStar.png" %>
-          <%= image_tag(img, :alt => '*', :width => '18px', :id => "#{show['title']}-rating-#{i}") %>
+        <% (1..5).each do |star_number| %>
+          <% img = star_number <= show['rating'] ? "/assets/filledStar.png" : "/assets/emptyStar.png" %>
+          <%= image_tag(img,
+                        :alt => '*',
+                        :width => '18px',
+                        'data-rating' => star_number,
+                        'data-show' => show['id'],
+                        :class => "show-rating"
+                       ) %>
         <% end %>
       <% end %>
     </div>
